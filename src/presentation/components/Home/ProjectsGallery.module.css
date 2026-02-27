@@ -1,0 +1,136 @@
+.projects {
+    background: var(--color-bg-main);
+    padding: 6rem 10%;
+}
+
+.heading {
+    margin-bottom: 3rem;
+    font-size: 2.9rem;
+    color: var(--color-primary);
+    text-transform: none;
+    padding-left: 0;
+    border-left: none;
+    text-align: center;
+}
+
+.boxContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.box {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.box:hover .image img {
+    transform: scale(1.1);
+}
+
+.image {
+    height: 22rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.image img {
+    transition: transform 0.3s ease;
+}
+
+.content {
+    display: flex;
+    background: var(--color-bg-card);
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+}
+
+.info {
+    padding: 1rem 2rem;
+}
+
+.info h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    text-transform: none;
+}
+
+.info p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.plusIcon {
+    width: 6rem;
+    font-size: 2.5rem;
+    background: var(--color-bg-light);
+    color: var(--color-primary);
+    text-align: center;
+    line-height: 6rem;
+    font-style: normal;
+    font-weight: 300;
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 26, 47, 0.9);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.lightboxContent {
+    position: relative;
+    width: 80%;
+    height: 80%;
+}
+
+.closeBtn {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--color-text-white);
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.closeBtn:hover {
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 3rem 5%;
+    }
+
+    .boxContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .image {
+        height: 25rem;
+    }
+}

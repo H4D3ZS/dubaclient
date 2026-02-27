@@ -1,0 +1,190 @@
+.hero {
+    position: relative;
+    padding: 0;
+}
+
+.homeSlider {
+    width: 100%;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    min-height: 82vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imageWrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.slide::before,
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.slide::before {
+    background: linear-gradient(180deg, rgba(7, 11, 21, 0.55), rgba(7, 11, 21, 0.82));
+}
+
+.slide::after {
+    background: radial-gradient(circle at 20% 20%, rgba(14, 165, 164, 0.25), transparent 45%);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    max-width: 760px;
+    padding: var(--spacing-xl) var(--spacing-md);
+    color: var(--color-text-white);
+    background: rgba(7, 11, 21, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 30px 80px rgba(7, 11, 21, 0.45);
+}
+
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.25rem;
+}
+
+.content h3 {
+    font-size: clamp(2.5rem, 4vw, var(--font-size-hero));
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-white);
+    text-transform: none;
+    letter-spacing: -0.02em;
+    font-family: var(--font-family-display);
+}
+
+.content p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.primaryBtn {
+    display: inline-block;
+    padding: 0.95rem 2.4rem;
+    background: var(--color-accent);
+    color: #1f2a37;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: var(--border-radius-full);
+    text-transform: none;
+    transition: var(--transition-fast);
+    box-shadow: 0 18px 50px rgba(7, 11, 21, 0.35);
+}
+
+.primaryBtn:hover {
+    transform: translateY(-2px);
+    background: #fbbf24;
+}
+
+.secondaryBtn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: var(--border-radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: var(--color-text-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    background: transparent;
+}
+
+.secondaryBtn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Swiper Navigation Buttons */
+.swiperButtonNext,
+.swiperButtonPrev {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 5.5rem;
+    width: 5.5rem;
+    background: rgba(255, 255, 255, 0.92);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.swiperButtonNext::after,
+.swiperButtonPrev::after {
+    content: '→';
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.swiperButtonPrev::after {
+    content: '←';
+}
+
+.swiperButtonPrev {
+    right: 5.5rem;
+}
+
+.swiperButtonNext:hover,
+.swiperButtonPrev:hover {
+    background: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .slide {
+        min-height: 65vh;
+        padding: 0 5%;
+    }
+
+    .content h3 {
+        font-size: 2.4rem;
+    }
+
+    .content p {
+        font-size: 1.05rem;
+    }
+
+    .swiperButtonNext,
+    .swiperButtonPrev {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+
+    .swiperButtonPrev {
+        right: 4.5rem;
+    }
+}

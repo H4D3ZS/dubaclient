@@ -1,0 +1,52 @@
+.topBar {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-white);
+    padding: 0.35rem 0;
+    font-size: var(--font-size-sm);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contactInfo {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent);
+}
+
+.socialIcons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.socialLink {
+    color: var(--color-text-white);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.socialLink:hover {
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .topBar {
+        display: none;
+        /* Often hidden on mobile, or stacked */
+    }
+}
