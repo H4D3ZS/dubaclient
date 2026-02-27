@@ -23,7 +23,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "19.2.3",
     "react-redux": "^9.2.0",
-    "swiper": "^12.1.0",
+    "swiper": "^12.1.2",
     "three": "^0.182.0"
   },
   "devDependencies": {
